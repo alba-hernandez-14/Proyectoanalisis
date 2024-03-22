@@ -13,11 +13,9 @@ namespace Proyectoanalisis_.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult enviandodatos(string datos)
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
+             return Content("Datos recibidos: "+datos);
         }
 
         public ActionResult Contact()
@@ -25,6 +23,7 @@ namespace Proyectoanalisis_.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
-        }
+        }          
+
     }
 }

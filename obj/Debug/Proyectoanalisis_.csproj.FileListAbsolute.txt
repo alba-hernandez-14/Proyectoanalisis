@@ -81,7 +81,6 @@ C:\Users\Usuario\Desktop\Proyectoanalisis_\bin\es\System.Web.WebPages.Deployment
 C:\Users\Usuario\Desktop\Proyectoanalisis_\bin\es\System.Web.WebPages.Razor.resources.dll
 C:\Users\Usuario\Desktop\Proyectoanalisis_\obj\Debug\Proyectoanalisis_.csproj.AssemblyReference.cache
 C:\Users\Usuario\Desktop\Proyectoanalisis_\obj\Debug\Proyectoanalisis_.csproj.CoreCompileInputs.cache
-C:\Users\Usuario\Desktop\Proyectoanalisis_\obj\Debug\Proyectoanalisis_.csproj.CopyComplete
 C:\Users\Usuario\Desktop\Proyectoanalisis_\obj\Debug\Proyectoanalisis_.dll
 C:\Users\Usuario\Desktop\Proyectoanalisis_\obj\Debug\Proyectoanalisis_.pdb
 C:\Users\Usuario\Desktop\Proyectoanalisis_\bin\Microsoft.Bcl.AsyncInterfaces.dll
@@ -105,3 +104,14 @@ C:\Users\Usuario\Desktop\Proyectoanalisis_\bin\System.Text.Encodings.Web.xml
 C:\Users\Usuario\Desktop\Proyectoanalisis_\bin\System.Text.Json.xml
 C:\Users\Usuario\Desktop\Proyectoanalisis_\bin\System.Threading.Tasks.Extensions.xml
 C:\Users\Usuario\Desktop\Proyectoanalisis_\bin\System.ValueTuple.xml
+C:\Users\Usuario\Desktop\Proyectoanalisis_\obj\Debug\Proyecto.6037B60D.Up2Date
+C:\Users\Usuario\Desktop\Proyectoanalisis_\bin\Newtonsoft.Json.Bson.dll
+C:\Users\Usuario\Desktop\Proyectoanalisis_\bin\System.Net.Http.Formatting.dll
+C:\Users\Usuario\Desktop\Proyectoanalisis_\bin\System.Web.Cors.dll
+C:\Users\Usuario\Desktop\Proyectoanalisis_\bin\System.Web.Http.Cors.dll
+C:\Users\Usuario\Desktop\Proyectoanalisis_\bin\System.Web.Http.dll
+C:\Users\Usuario\Desktop\Proyectoanalisis_\bin\Newtonsoft.Json.Bson.pdb
+C:\Users\Usuario\Desktop\Proyectoanalisis_\bin\Newtonsoft.Json.Bson.xml
+C:\Users\Usuario\Desktop\Proyectoanalisis_\bin\System.Net.Http.Formatting.xml
+C:\Users\Usuario\Desktop\Proyectoanalisis_\bin\System.Web.Http.xml
+C:\Users\Usuario\Desktop\Proyectoanalisis_\bin\System.Web.Http.Cors.xml

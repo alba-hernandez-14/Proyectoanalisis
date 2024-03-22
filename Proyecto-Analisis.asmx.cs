@@ -16,22 +16,21 @@ namespace Proyectoanalisis_
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
     // Para permitir que se llame a este servicio web desde un script, usando ASP.NET AJAX, quite la marca de comentario de la línea siguiente. 
-    // [System.Web.Script.Services.ScriptService]
+     [System.Web.Script.Services.ScriptService]
     public class Proyecto_Analisis : System.Web.Services.WebService
     {
         String servidor;
         String usuario;
         String password;
         String cadenaconexion;
-     
+
         public Proyecto_Analisis()
         {
+
             servidor = "localhost:1521 / orcl";
             usuario = "PROYECTO";
             password = "1234";
             cadenaconexion = "Data Source=" + servidor + ";User Id=" + usuario + "; Password=" + password + "; ";
-       
-
 
         }
 
@@ -40,19 +39,25 @@ namespace Proyectoanalisis_
         {
             try
             {
-               OracleConnection conexion = new OracleConnection(cadenaconexion);//abrir la conexion 
-               conexion.Open();     // se inicia la conexion 
-               OracleDataAdapter adapter = new OracleDataAdapter("select * from clientes", conexion);
-               DataSet ds = new DataSet();
-               adapter.Fill(ds, "clientes");
-               return ds;
+                OracleConnection conexion = new OracleConnection(cadenaconexion);//abrir la conexion 
+                conexion.Open();     // se inicia la conexion 
+                OracleDataAdapter adapter = new OracleDataAdapter("select * from CXC_CLIENTE", conexion);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds, "CXC_CLIENTE");
+                return ds;
             }
             catch (Exception ex)
             {
                 // Manejar excepciones aquí
                 throw new Exception("Error al intentar obtener datos: " + ex.Message);
             }
-           
+
         }
+
+
+//        [WebMethod]
+        
+
+     
     }
 }
