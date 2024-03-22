@@ -12,7 +12,7 @@ create table CXC_CLIENTE(
     constraint cliente_pk primary key (CLI_CLIENTE)
 );
 
-create or replace type t_cxc_cliente_record as object (
+create or replace type t_cxc_cliente_record as object ( //falta este
     CLI_CLIENTE NUMBER,
     CLI_RAZON_SOCIAL VARCHAR (50),
     CLI_DIRECCION VARCHAR (50),
@@ -103,7 +103,7 @@ create procedure pas_actualizar_cliente(
                     then cli_direccion
                     else p_direccion
                 end,
-            cli_telefono = case when p_telefono is null
+                cli_telefono = case when p_telefono is null
                     then cli_telefono
                     else p_telefono
                 end,

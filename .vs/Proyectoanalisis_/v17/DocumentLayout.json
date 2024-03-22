@@ -5,6 +5,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{7C1077B3-3DDD-4872-B473-76F92932E702}|Proyectoanalisis_.csproj|c:\\users\\usuario\\desktop\\proyectoanalisis_\\proyecto-analisis.asmx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7C1077B3-3DDD-4872-B473-76F92932E702}|Proyectoanalisis_.csproj|solutionrelative:proyecto-analisis.asmx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C1077B3-3DDD-4872-B473-76F92932E702}|Proyectoanalisis_.csproj|c:\\users\\usuario\\desktop\\proyectoanalisis_\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C1077B3-3DDD-4872-B473-76F92932E702}|Proyectoanalisis_.csproj|solutionrelative:controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C1077B3-3DDD-4872-B473-76F92932E702}|Proyectoanalisis_.csproj|c:\\users\\usuario\\desktop\\proyectoanalisis_\\models\\usuarioen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C1077B3-3DDD-4872-B473-76F92932E702}|Proyectoanalisis_.csproj|solutionrelative:models\\usuarioen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -17,12 +25,30 @@
           "SelectedChildIndex": 2,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Usuarioen.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\Proyectoanalisis_\\Models\\Usuarioen.cs",
+              "RelativeDocumentMoniker": "Models\\Usuarioen.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\Proyectoanalisis_\\Models\\Usuarioen.cs",
+              "RelativeToolTip": "Models\\Usuarioen.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-22T04:22:52.129Z",
+              "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UsuarioController.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\Proyectoanalisis_\\Controllers\\UsuarioController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UsuarioController.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\Proyectoanalisis_\\Controllers\\UsuarioController.cs",
+              "RelativeToolTip": "Controllers\\UsuarioController.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAzwBYAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-22T04:22:04.159Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -32,7 +58,7 @@
               "RelativeDocumentMoniker": "Proyecto-Analisis.asmx.cs",
               "ToolTip": "C:\\Users\\Usuario\\Desktop\\Proyectoanalisis_\\Proyecto-Analisis.asmx.cs",
               "RelativeToolTip": "Proyecto-Analisis.asmx.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAACQAAAATAAAA",
+              "ViewState": "AQIAAC8BAAAAAAAAAAAQwJUBAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-21T23:54:37.015Z",
               "EditorCaption": ""
