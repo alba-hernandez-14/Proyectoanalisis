@@ -45,9 +45,9 @@ namespace Proyectoanalisis_
             {
                 OracleConnection conexion = new OracleConnection(cadenaconexion);//abrir la conexion 
                 conexion.Open();     // se inicia la conexion 
-                OracleDataAdapter adapter = new OracleDataAdapter("select * from CXC_CLIENTE", conexion);
+                OracleDataAdapter adapter = new OracleDataAdapter("select * from fas_listar_clientes()", conexion);
                 DataSet ds = new DataSet();
-                adapter.Fill(ds, "CXC_CLIENTE");
+                adapter.Fill(ds, "fas_listar_clientes()");
                 return ds;
             }
             catch (Exception ex)
@@ -58,8 +58,26 @@ namespace Proyectoanalisis_
 
         }
 
+        [WebMethod]
+        public DataSet ClienteBuscar(int cli_cliente)
+        {
+            try
+            {
+                OracleConnection conexion = new OracleConnection(cadenaconexion);//abrir la conexion 
+                conexion.Open();     // se inicia la conexion 
+                OracleDataAdapter adapter = new OracleDataAdapter("select * from fas_buscar_id_cliente(" + cli_cliente + ")", conexion);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds, "fas_buscar_id_cliente()");
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                // Manejar excepciones aquí
+                throw new Exception("Error al intentar obtener datos: " + ex.Message);
+            }
 
-       
+        }
+
         [WebMethod] //clientes 
         public String Clientesguardar(String CLI_RAZON_SOCIAL, String CLI_DIRECCION, String CLI_TELEFONO, String CLI_CORREO_ELECTRONICO, String CLI_TIPO_CLIENTE, String CLI_NIT)
         {
@@ -88,7 +106,7 @@ namespace Proyectoanalisis_
                 }
                 catch (Exception error)
                 {
-                    return respuesta = "error";
+                    throw new Exception(error.Message);
                     throw error;
                 }
             }
@@ -105,7 +123,7 @@ namespace Proyectoanalisis_
             {
                 try
                 {
-                    conexion.ConnectionString = conexionString;
+                    conexion.ConnectionString = this.cadenaconexion;
                     conexion.Open();
                     using (OracleCommand comando = new OracleCommand())
                     {
@@ -156,7 +174,7 @@ namespace Proyectoanalisis_
                 }
                 catch (Exception error)
                 {
-                    return respuesta = "error al eliminar cliente";
+                    return respuesta = error.Message;//"error al eliminar cliente";
                     throw error;
                 }
             }
@@ -173,9 +191,9 @@ namespace Proyectoanalisis_
             {
                 OracleConnection conexion = new OracleConnection(cadenaconexion);//abrir la conexion 
                 conexion.Open();     // se inicia la conexion 
-                OracleDataAdapter adapter = new OracleDataAdapter("select * from CXC_CREDITO", conexion);
+                OracleDataAdapter adapter = new OracleDataAdapter("select * from fas_listar_credito()", conexion);
                 DataSet ds = new DataSet();
-                adapter.Fill(ds, "CXC_CREDITO");
+                adapter.Fill(ds, "fas_listar_credito()");
                 return ds;
             }
             catch (Exception ex)
@@ -288,9 +306,9 @@ namespace Proyectoanalisis_
             {
                 OracleConnection conexion = new OracleConnection(cadenaconexion);//abrir la conexion 
                 conexion.Open();     // se inicia la conexion 
-                OracleDataAdapter adapter = new OracleDataAdapter("select * from CXC_EMPLEADO", conexion);
+                OracleDataAdapter adapter = new OracleDataAdapter("select * from fas_listar_empleado()", conexion);
                 DataSet ds = new DataSet();
-                adapter.Fill(ds, "CXC_EMPLEADO");
+                adapter.Fill(ds, "fas_listar_empleado()");
                 return ds;
             }
             catch (Exception ex)
@@ -412,9 +430,9 @@ namespace Proyectoanalisis_
             {
                 OracleConnection conexion = new OracleConnection(cadenaconexion);//abrir la conexion 
                 conexion.Open();     // se inicia la conexion 
-                OracleDataAdapter adapter = new OracleDataAdapter("select * from CXC_PRODUCTO", conexion);
+                OracleDataAdapter adapter = new OracleDataAdapter("select * from fas_listar_productos()", conexion);
                 DataSet ds = new DataSet();
-                adapter.Fill(ds, "CXC_PRODUCTO");
+                adapter.Fill(ds, "fas_listar_productos()");
                 return ds;
             }
             catch (Exception ex)
