@@ -37,15 +37,15 @@ namespace Proyectoanalisis_
 
 
         [WebMethod]
-        public DataSet ClientesMostrar()
+        public DataSet DocumentosMostrar()
         {
             try
             {
                 OracleConnection conexion = new OracleConnection(cadenaconexion);//abrir la conexion 
                 conexion.Open();     // se inicia la conexion 
-                OracleDataAdapter adapter = new OracleDataAdapter("select * from fas_listar_clientes()", conexion);
+                OracleDataAdapter adapter = new OracleDataAdapter("select * from fas_listar_documentos()", conexion);
                 DataSet ds = new DataSet();
-                adapter.Fill(ds, "fas_listar_clientes()");
+                adapter.Fill(ds, "fas_listar_documentos()");
                 return ds;
             }
             catch (Exception ex)
@@ -57,15 +57,15 @@ namespace Proyectoanalisis_
         }
 
         [WebMethod]
-        public DataSet ClienteBuscar(int cli_cliente)
+        public DataSet DocumentoBuscar(int p_documento)
         {
             try
             {
                 OracleConnection conexion = new OracleConnection(cadenaconexion);//abrir la conexion 
                 conexion.Open();     // se inicia la conexion 
-                OracleDataAdapter adapter = new OracleDataAdapter("select * from fas_buscar_id_cliente(" + cli_cliente + ")", conexion);
+                OracleDataAdapter adapter = new OracleDataAdapter("select * from fas_buscar_documentos(" + p_documento + ")", conexion);
                 DataSet ds = new DataSet();
-                adapter.Fill(ds, "fas_buscar_id_cliente()");
+                adapter.Fill(ds, "fas_buscar_documentos()");
                 return ds;
             }
             catch (Exception ex)
@@ -76,8 +76,9 @@ namespace Proyectoanalisis_
 
         }
 
-        [WebMethod] //clientes 
-        public String Clientesguardar(String CLI_RAZON_SOCIAL, String CLI_DIRECCION, String CLI_TELEFONO, String CLI_CORREO_ELECTRONICO, String CLI_TIPO_CLIENTE, String CLI_NIT)
+
+        [WebMethod]
+        public String Documentoguardar(String pDoc_venta, String pDoc_tipo_documento, String pDoc_valor, String pDoc_no_documento, String pDoc_no_emision, String pDoc_documento_asociado, int pDoc_valor_total)
         {
             using (OracleConnection conexion = new OracleConnection())
             {
@@ -87,15 +88,16 @@ namespace Proyectoanalisis_
                     conexion.Open();
                     using (OracleCommand comando = new OracleCommand())
                     {
-                        comando.CommandText = "pas_crear_cliente";
+                        comando.CommandText = "pas_crear_documento";
                         comando.CommandType = CommandType.StoredProcedure;
                         comando.Connection = conexion;
-                        comando.Parameters.Add(new OracleParameter("p_razon_social", CLI_RAZON_SOCIAL));
-                        comando.Parameters.Add(new OracleParameter("p_direccion", CLI_DIRECCION));
-                        comando.Parameters.Add(new OracleParameter("p_telefono", CLI_TELEFONO));
-                        comando.Parameters.Add(new OracleParameter("p_email", CLI_CORREO_ELECTRONICO));
-                        comando.Parameters.Add(new OracleParameter("p_tipo_cliente", CLI_TIPO_CLIENTE));
-                        comando.Parameters.Add(new OracleParameter("p_nit", CLI_NIT));
+                        comando.Parameters.Add(new OracleParameter("p_venta", pDoc_venta));
+                        comando.Parameters.Add(new OracleParameter("p_tipo_documento", pDoc_tipo_documento));
+                        comando.Parameters.Add(new OracleParameter("v_total", pDoc_valor));
+                        comando.Parameters.Add(new OracleParameter("p_no_documento", pDoc_no_documento));
+                        comando.Parameters.Add(new OracleParameter("p_no_emision", pDoc_no_emision));
+                        comando.Parameters.Add(new OracleParameter("p_documento_asociado", pDoc_documento_asociado));
+                        //comando.Parameters.Add(new OracleParameter("p_nit", pDoc_valor_total));
                         OracleDataReader read = comando.ExecuteReader();
 
                         return "guardado";
@@ -112,8 +114,7 @@ namespace Proyectoanalisis_
 
 
         [WebMethod]//clientes
-
-        public String Clientesactualizar(int cli_cliente, String cli_razon_social, String cli_direccion, String cli_telefono, String cli_correo_electronico, String cli_tipo_cliente, String cli_nit)
+        public String Documentoactualizar(int p_documento, String pDoc_venta, String pDoc_tipo_documento, String pDoc_valor, String pDoc_no_documento, String pDoc_no_emision, String pDoc_documento_asociado)
         {
             using (OracleConnection conexion = new OracleConnection())
             {
@@ -123,16 +124,16 @@ namespace Proyectoanalisis_
                     conexion.Open();
                     using (OracleCommand comando = new OracleCommand())
                     {
-                        comando.CommandText = "pas_actualizar_cliente";
+                        comando.CommandText = "pas_actualizar_documento";
                         comando.CommandType = CommandType.StoredProcedure;
                         comando.Connection = conexion;
-                        comando.Parameters.Add(new OracleParameter("p_cliente", cli_cliente));
-                        comando.Parameters.Add(new OracleParameter("p_razon_social", cli_razon_social));
-                        comando.Parameters.Add(new OracleParameter("p_direccion", cli_direccion));
-                        comando.Parameters.Add(new OracleParameter("p_telefono", cli_telefono));
-                        comando.Parameters.Add(new OracleParameter("p_email", cli_correo_electronico));
-                        comando.Parameters.Add(new OracleParameter("p_tipo_cliente", cli_tipo_cliente));
-                        comando.Parameters.Add(new OracleParameter("p_nit", cli_nit));
+                        comando.Parameters.Add(new OracleParameter("p_venta", p_documento));
+                        comando.Parameters.Add(new OracleParameter("p_venta", pDoc_venta));
+                        comando.Parameters.Add(new OracleParameter("p_tipo_documento", pDoc_tipo_documento));
+                        comando.Parameters.Add(new OracleParameter("v_total", pDoc_valor));
+                        comando.Parameters.Add(new OracleParameter("p_no_documento", pDoc_no_documento));
+                        comando.Parameters.Add(new OracleParameter("p_no_emision", pDoc_no_emision));
+                        comando.Parameters.Add(new OracleParameter("p_documento_asociado", pDoc_documento_asociado));
                         OracleDataReader read = comando.ExecuteReader();
 
                         return "datos de usuario actualizados";
@@ -146,9 +147,9 @@ namespace Proyectoanalisis_
             }
 
         }
-        [WebMethod]//clientes
-
-        public String ClientesEliminar(int cli_cliente)
+      
+        [WebMethod]
+        public String ClientesEliminar(int p_documento)
         {
 
             using (OracleConnection conexion = new OracleConnection())
@@ -159,10 +160,10 @@ namespace Proyectoanalisis_
                     conexion.Open();
                     using (OracleCommand comando = new OracleCommand())
                     {
-                        comando.CommandText = "pas_eliminar_cliente";
+                        comando.CommandText = "pas_eliminar_documento";
                         comando.CommandType = CommandType.StoredProcedure;
                         comando.Connection = conexion;
-                        comando.Parameters.Add(new OracleParameter("p_cliente", cli_cliente));
+                        comando.Parameters.Add(new OracleParameter("p_documento", p_documento));
 
                         OracleDataReader read = comando.ExecuteReader();
                         return "datos de usuario eliminados";
