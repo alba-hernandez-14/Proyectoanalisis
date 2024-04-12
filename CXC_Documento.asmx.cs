@@ -112,8 +112,7 @@ namespace Proyectoanalisis_
 
         }
 
-
-        [WebMethod]//clientes
+        [WebMethod]
         public String Documentoactualizar(int p_documento, String pDoc_venta, String pDoc_tipo_documento, String pDoc_valor, String pDoc_no_documento, String pDoc_no_emision, String pDoc_documento_asociado)
         {
             using (OracleConnection conexion = new OracleConnection())
@@ -149,7 +148,7 @@ namespace Proyectoanalisis_
         }
       
         [WebMethod]
-        public String ClientesEliminar(int p_documento)
+        public String DocumentoEliminar(int p_documento)
         {
 
             using (OracleConnection conexion = new OracleConnection())
@@ -175,13 +174,6 @@ namespace Proyectoanalisis_
                     throw error;
                 }
             }
-
         }
-
-
-
-
-
-
     }
 }

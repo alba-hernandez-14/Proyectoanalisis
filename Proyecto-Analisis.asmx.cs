@@ -412,6 +412,26 @@ namespace Proyectoanalisis_
         }
 
 
+        [WebMethod]
+        public DataSet EmpleadosBuscar(int p_id)
+        {
+            try
+            {
+                OracleConnection conexion = new OracleConnection(cadenaconexion);//abrir la conexion 
+                conexion.Open();     // se inicia la conexion 
+                OracleDataAdapter adapter = new OracleDataAdapter("select * from fas_buscar_id_empleado(" + p_id + ")", conexion);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds, "fas_buscar_id_empleado()");
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                // Manejar excepciones aquí
+                throw new Exception("Error al intentar obtener datos: " + ex.Message);
+            }
+
+        }
+
 
         //Productos
 
@@ -525,5 +545,31 @@ namespace Proyectoanalisis_
                 }
             }
         }
+
+        [WebMethod]
+        public DataSet ProductoBuscar(int p_id)
+        {
+            try
+            {
+                OracleConnection conexion = new OracleConnection(cadenaconexion);//abrir la conexion 
+                conexion.Open();     // se inicia la conexion 
+                OracleDataAdapter adapter = new OracleDataAdapter("select * from fas_buscar_id_producto(" + p_id + ")", conexion);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds, "fas_buscar_id_producto()");
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                // Manejar excepciones aquí
+                throw new Exception("Error al intentar obtener datos: " + ex.Message);
+            }
+
+        }
+
+
+
+
+
+
     }
 }

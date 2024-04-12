@@ -146,7 +146,7 @@ namespace Proyectoanalisis_
         }
         
         [WebMethod]
-        public String ClientesEliminar(int Ven_p_venta)
+        public String VentasEliminar(int Ven_p_venta)
         {
 
             using (OracleConnection conexion = new OracleConnection())
