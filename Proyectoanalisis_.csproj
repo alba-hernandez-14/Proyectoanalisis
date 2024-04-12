@@ -173,6 +173,22 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
+    <Compile Include="CXC_DetalleVenta.asmx.cs">
+      <DependentUpon>CXC_DetalleVenta.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CXC_Documento.asmx.cs">
+      <DependentUpon>CXC_Documento.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CXC_Puesto.asmx.cs">
+      <DependentUpon>CXC_Puesto.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CXC_Venta.asmx.cs">
+      <DependentUpon>CXC_Venta.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -200,6 +216,10 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="CXC_DetalleVenta.asmx" />
+    <Content Include="CXC_Documento.asmx" />
+    <Content Include="CXC_Puesto.asmx" />
+    <Content Include="CXC_Venta.asmx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />

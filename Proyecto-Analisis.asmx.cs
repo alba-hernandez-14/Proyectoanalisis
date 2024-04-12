@@ -25,16 +25,16 @@ namespace Proyectoanalisis_
         String usuario;
         String password;
         String cadenaconexion;
-
+       
         public Proyecto_Analisis()
         {
 
             servidor = "localhost:1521 / orcl";
-            usuario = "PROYECTO";
+            usuario = "PROYECTOANALISIS";
             password = "1234";
             cadenaconexion = "Data Source=" + servidor + ";User Id=" + usuario + "; Password=" + password + "; ";
-
         }
+
         public string conexionString = ConfigurationManager.ConnectionStrings["BaseDatos"].ConnectionString;
 
 
@@ -81,7 +81,6 @@ namespace Proyectoanalisis_
         [WebMethod] //clientes 
         public String Clientesguardar(String CLI_RAZON_SOCIAL, String CLI_DIRECCION, String CLI_TELEFONO, String CLI_CORREO_ELECTRONICO, String CLI_TIPO_CLIENTE, String CLI_NIT)
         {
-            String respuesta;
             using (OracleConnection conexion = new OracleConnection())
             {
                 try
@@ -101,7 +100,7 @@ namespace Proyectoanalisis_
                         comando.Parameters.Add(new OracleParameter("p_nit", CLI_NIT));
                         OracleDataReader read = comando.ExecuteReader();
 
-                        return respuesta = "guardado";
+                        return "guardado";
                     }
                 }
                 catch (Exception error)
@@ -118,7 +117,6 @@ namespace Proyectoanalisis_
 
         public String Clientesactualizar(int cli_cliente, String cli_razon_social, String cli_direccion, String cli_telefono, String cli_correo_electronico, String cli_tipo_cliente, String cli_nit)
         {
-            String respuesta;
             using (OracleConnection conexion = new OracleConnection())
             {
                 try
@@ -139,12 +137,12 @@ namespace Proyectoanalisis_
                         comando.Parameters.Add(new OracleParameter("p_nit", cli_nit));
                         OracleDataReader read = comando.ExecuteReader();
 
-                        return respuesta = "datos de usuario actualizados";
+                        return "datos de usuario actualizados";
                     }
                 }
                 catch (Exception error)
                 {
-                    return respuesta = "error";
+                    return "error";
                     throw error;
                 }
             }
@@ -154,7 +152,7 @@ namespace Proyectoanalisis_
 
         public String ClientesEliminar (int cli_cliente)
         {
-            String respuesta;
+            
             using (OracleConnection conexion = new OracleConnection())
             {
                 try
@@ -169,12 +167,12 @@ namespace Proyectoanalisis_
                         comando.Parameters.Add(new OracleParameter("p_cliente", cli_cliente));
                        
                         OracleDataReader read = comando.ExecuteReader();
-                        return respuesta = "datos de usuario eliminados";
+                        return "datos de usuario eliminados";
                     }
                 }
                 catch (Exception error)
                 {
-                    return respuesta = error.Message;//"error al eliminar cliente";
+                    return "error al eliminar cliente";
                     throw error;
                 }
             }
@@ -206,7 +204,6 @@ namespace Proyectoanalisis_
         [WebMethod] //credito 
         public String CREDITOSGuardar(int CLI_CLIENTE, double CRE_CREDITO_DISPONIBLE, double CRE_PLAZO)
         {
-            String respuesta;
             using (OracleConnection conexion = new OracleConnection())
             {
                 try
@@ -222,12 +219,12 @@ namespace Proyectoanalisis_
                         comando.Parameters.Add(new OracleParameter("p_credito", CRE_CREDITO_DISPONIBLE));
                         comando.Parameters.Add(new OracleParameter("p_plazo", CRE_PLAZO));
                         OracleDataReader read = comando.ExecuteReader();
-                        return respuesta = "guardado";
+                        return "guardado";
                     }
                 }
                 catch (Exception error)
                 {
-                    return respuesta = "error";
+                    return "error";
                     throw error;
                 }
             }
@@ -237,7 +234,6 @@ namespace Proyectoanalisis_
 
         public String CREDITOSActualizar(int cre_credito , int cli_cliente, double cre_credito_disponible, double cre_plazo)
         {
-            String respuesta;
             using (OracleConnection conexion = new OracleConnection())
             {
                 try
@@ -255,12 +251,12 @@ namespace Proyectoanalisis_
                         comando.Parameters.Add(new OracleParameter("p_plazo", cre_plazo));
                         
                         OracleDataReader read = comando.ExecuteReader();
-                        return respuesta = "datos de usuario actualizados";
+                        return "datos de usuario actualizados";
                     }
                 }
                 catch (Exception error)
                 {
-                    return respuesta = "error";
+                    return "error";
                     throw error;
                 }
             }
@@ -270,7 +266,6 @@ namespace Proyectoanalisis_
 
         public String CREDITOSEliminar(int cre_credito)
         {
-            String respuesta;
             using (OracleConnection conexion = new OracleConnection())
             {
                 try
@@ -285,12 +280,12 @@ namespace Proyectoanalisis_
                         comando.Parameters.Add(new OracleParameter("p_credito", cre_credito));
 
                         OracleDataReader read = comando.ExecuteReader();
-                        return respuesta = "datos de usuario eliminados";
+                        return "datos de usuario eliminados";
                     }
                 }
                 catch (Exception error)
                 {
-                    return respuesta = "error al eliminar cliente";
+                    return "error al eliminar cliente";
                     throw error;
                 }
             }
@@ -322,7 +317,6 @@ namespace Proyectoanalisis_
         [WebMethod] //empleados
         public String Empleadosguardar(string EMP_NOMBRE, string EMP_APELLIDO, string EMP_TELEFONO, string EMP_DIRECCION, string EMP_CORREO_ELECTRONICO)
         {
-            String respuesta;
             using (OracleConnection conexion = new OracleConnection())
             {
                 try
@@ -341,12 +335,12 @@ namespace Proyectoanalisis_
                         comando.Parameters.Add(new OracleParameter("p_email", EMP_CORREO_ELECTRONICO));
                         OracleDataReader read = comando.ExecuteReader();
 
-                        return respuesta = "guardado";
+                        return "guardado";
                     }
                 }
                 catch (Exception error)
                 {
-                    return respuesta = "error";
+                    return "error AL GUARDAR";
                     throw error;
                 }
             }
@@ -357,7 +351,6 @@ namespace Proyectoanalisis_
         [WebMethod] //empleados
         public String EmpleadosActualizar(int EMP_EMPLEADO, string EMP_NOMBRE, string EMP_APELLIDO, string EMP_TELEFONO, string EMP_DIRECCION, string EMP_CORREO_ELECTRONICO)
         {
-            String respuesta;
             using (OracleConnection conexion = new OracleConnection())
             {
                 try
@@ -377,12 +370,12 @@ namespace Proyectoanalisis_
                         comando.Parameters.Add(new OracleParameter("p_email", EMP_CORREO_ELECTRONICO));
                         OracleDataReader read = comando.ExecuteReader();
 
-                        return respuesta = "Actualizado";
+                        return "Actualizado";
                     }
                 }
                 catch (Exception error)
                 {
-                    return respuesta = "error";
+                    return "error";
                     throw error;
                 }
             }
@@ -392,7 +385,6 @@ namespace Proyectoanalisis_
         [WebMethod] //empleados
         public String EmpleadosEliminar(int EMP_EMPLEADO)
         {
-            String respuesta;
             using (OracleConnection conexion = new OracleConnection())
             {
                 try
@@ -407,12 +399,12 @@ namespace Proyectoanalisis_
                         comando.Parameters.Add(new OracleParameter("p_empleado", EMP_EMPLEADO));
                         OracleDataReader read = comando.ExecuteReader();
 
-                        return respuesta = "Eliminados";
+                        return "Eliminados";
                     }
                 }
                 catch (Exception error)
                 {
-                    return respuesta = "error";
+                    return "error";
                     throw error;
                 }
             }
@@ -446,7 +438,6 @@ namespace Proyectoanalisis_
         [WebMethod] //empleados
         public String Productosguardar(string pro_descripcion, double pro_precio, double pro_cantidad)
         {
-            String respuesta;
             using (OracleConnection conexion = new OracleConnection())
             {
                 try
@@ -463,23 +454,21 @@ namespace Proyectoanalisis_
                         comando.Parameters.Add(new OracleParameter("p_cantidad", pro_cantidad));
                         OracleDataReader read = comando.ExecuteReader();
 
-                        return respuesta = "guardado";
+                        return "guardado";
                     }
                 }
                 catch (Exception error)
                 {
-                    return respuesta = "error";
+                    return "error";
                     throw error;
                 }
             }
-
         }
 
 
         [WebMethod] //productos
         public String ProductosActualizar(int pro_producto, string pro_descripcion, double pro_precio, double pro_cantidad)
         {
-            String respuesta;
             using (OracleConnection conexion = new OracleConnection())
             {
                 try
@@ -497,12 +486,12 @@ namespace Proyectoanalisis_
                         comando.Parameters.Add(new OracleParameter("p_cantidad", pro_cantidad));
                         OracleDataReader read = comando.ExecuteReader();
 
-                        return respuesta = "Actualizado";
+                        return "Actualizado";
                     }
                 }
                 catch (Exception error)
                 {
-                    return respuesta = "error";
+                    return "error";
                     throw error;
                 }
             }
@@ -512,7 +501,6 @@ namespace Proyectoanalisis_
         [WebMethod] //productos
         public String ProductosEliminar(int pro_producto)
         {
-            String respuesta;
             using (OracleConnection conexion = new OracleConnection())
             {
                 try
@@ -527,23 +515,15 @@ namespace Proyectoanalisis_
                         comando.Parameters.Add(new OracleParameter("p_id", pro_producto));
                         OracleDataReader read = comando.ExecuteReader();
 
-                        return respuesta = "Eliminados";
+                        return "Eliminados";
                     }
                 }
                 catch (Exception error)
                 {
-                    return respuesta = "error";
+                    return "error";
                     throw error;
                 }
             }
-
         }
-
-
-
-
-
-
-
     }
 }
