@@ -90,11 +90,11 @@ namespace Proyectoanalisis_
                     conexion.Open();
                     using (OracleCommand comando = new OracleCommand())
                     {
-                        comando.CommandText = "pas_crear_cliente";
+                        comando.CommandText = " pas_crear_venta";
                         comando.CommandType = CommandType.StoredProcedure;
                         comando.Connection = conexion;
-                        comando.Parameters.Add(new OracleParameter("p_cliente", Ven_p_cliente));
-                        comando.Parameters.Add(new OracleParameter("p_empleado", Ven_p_empleado));
+                        comando.Parameters.Add(new OracleParameter("id_cliente", Ven_p_cliente));
+                        comando.Parameters.Add(new OracleParameter("ID_empleado", Ven_p_empleado));
                         comando.Parameters.Add(new OracleParameter("p_condicion_pago", Ven_p_condicion_pago));
                         comando.Parameters.Add(new OracleParameter("p_no_autorizacion", Ven_p_no_autorizacion));
                          OracleDataReader read = comando.ExecuteReader();
@@ -194,12 +194,12 @@ namespace Proyectoanalisis_
                         comando.Parameters.Add(new OracleParameter("p_venta", Cerrar_p_venta));
 
                         OracleDataReader read = comando.ExecuteReader();
-                        return "datos de usuario eliminados";
+                        return "datos de venta completos";
                     }
                 }
                 catch (Exception error)
                 {
-                    return "error al eliminar";
+                    return "error al cerrar";
                     throw error;
                 }
             }
@@ -225,12 +225,12 @@ namespace Proyectoanalisis_
                         comando.Parameters.Add(new OracleParameter("VEN_TOTAL", p_valor));
 
                         OracleDataReader read = comando.ExecuteReader();
-                        return "datos de usuario eliminados";
+                        return "datos sumados";
                     }
                 }
                 catch (Exception error)
                 {
-                    return "error al eliminar";
+                    return "error al calcular";
                     throw error;
                 }
             }

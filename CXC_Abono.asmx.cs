@@ -12,40 +12,62 @@ using System.Configuration;
 namespace Proyectoanalisis_
 {
     /// <summary>
-    /// Descripción breve de CXC_Documento
+    /// Descripción breve de CXC_Abono
     /// </summary>
     [WebService(Namespace = "http://tempuri.org/")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
     // Para permitir que se llame a este servicio web desde un script, usando ASP.NET AJAX, quite la marca de comentario de la línea siguiente. 
     // [System.Web.Script.Services.ScriptService]
-    public class CXC_Documento : System.Web.Services.WebService
+    public class CXC_Abono : System.Web.Services.WebService
     {
+
         String servidor;
         String usuario;
         String password;
         String cadenaconexion;
 
-        public CXC_Documento()
+        public CXC_Abono()
         {
+
             servidor = "localhost:1521 / orcl";
             usuario = "PROYECTOANALISIS";
             password = "1234";
             cadenaconexion = "Data Source=" + servidor + ";User Id=" + usuario + "; Password=" + password + "; ";
         }
+
         public string conexionString = ConfigurationManager.ConnectionStrings["BaseDatos"].ConnectionString;
 
 
         [WebMethod]
-        public DataSet DocumentosMostrar()
+        public DataSet AbonoMostrar(int id_abono)
         {
             try
             {
                 OracleConnection conexion = new OracleConnection(cadenaconexion);//abrir la conexion 
                 conexion.Open();     // se inicia la conexion 
-                OracleDataAdapter adapter = new OracleDataAdapter("select * from fas_listar_documentos()", conexion);
+                OracleDataAdapter adapter = new OracleDataAdapter("select * from FAS_LISTAR_ABONOS_POR_VENTA("+id_abono+")", conexion);
                 DataSet ds = new DataSet();
-                adapter.Fill(ds, "fas_listar_documentos()");
+                adapter.Fill(ds, "FAS_LISTAR_ABONOS_POR_VENTA()");
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                // Manejar excepciones aquí
+                throw new Exception("Error al intentar obtener datos: " + ex.Message);
+            }
+        }
+
+        [WebMethod]
+        public DataSet AbonoBuscar(int id_abono)
+        {
+            try
+            {
+                OracleConnection conexion = new OracleConnection(cadenaconexion);//abrir la conexion 
+                conexion.Open();     // se inicia la conexion 
+                OracleDataAdapter adapter = new OracleDataAdapter("select * from FAS_BUSCAR_ABONO(" + id_abono + ")", conexion);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds, "FAS_BUSCAR_ABONO()");
                 return ds;
             }
             catch (Exception ex)
@@ -56,29 +78,8 @@ namespace Proyectoanalisis_
 
         }
 
-        [WebMethod]
-        public DataSet DocumentoBuscar(int p_documento)
-        {
-            try
-            {
-                OracleConnection conexion = new OracleConnection(cadenaconexion);//abrir la conexion 
-                conexion.Open();     // se inicia la conexion 
-                OracleDataAdapter adapter = new OracleDataAdapter("select * from fas_buscar_documentos(" + p_documento + ")", conexion);
-                DataSet ds = new DataSet();
-                adapter.Fill(ds, "fas_buscar_documentos()");
-                return ds;
-            }
-            catch (Exception ex)
-            {
-                // Manejar excepciones aquí
-                throw new Exception("Error al intentar obtener datos: " + ex.Message);
-            }
-
-        }
-
-
-        [WebMethod]
-        public String Documentoguardar(long pDoc_venta, String pDoc_tipo_documento, String pDoc_valor, String pDoc_no_documento, String pDoc_no_emision, long pDoc_documento_asociado, int pDoc_valor_total)
+        [WebMethod] 
+        public String Abonoguardar(int P_NOVENTA_ID, String P_TIPO_PAGO, String P_NO_AUTORIZACION, float P_FLVALOR)
         {
             using (OracleConnection conexion = new OracleConnection())
             {
@@ -88,16 +89,13 @@ namespace Proyectoanalisis_
                     conexion.Open();
                     using (OracleCommand comando = new OracleCommand())
                     {
-                        comando.CommandText = "pas_crear_documento";
+                        comando.CommandText = "PAS_CREAR_ABONO";
                         comando.CommandType = CommandType.StoredProcedure;
                         comando.Connection = conexion;
-                        comando.Parameters.Add(new OracleParameter("p_venta", pDoc_venta));
-                        comando.Parameters.Add(new OracleParameter("p_tipo_documento", pDoc_tipo_documento));
-                        comando.Parameters.Add(new OracleParameter("v_total", pDoc_valor));
-                        comando.Parameters.Add(new OracleParameter("p_no_documento", pDoc_no_documento));
-                        comando.Parameters.Add(new OracleParameter("p_no_emision", pDoc_no_emision));
-                        comando.Parameters.Add(new OracleParameter("p_documento_asociado", pDoc_documento_asociado));
-                        comando.Parameters.Add(new OracleParameter("valortotal", pDoc_valor_total));
+                        comando.Parameters.Add(new OracleParameter("P_VENTA_ID", P_NOVENTA_ID));
+                        comando.Parameters.Add(new OracleParameter("P_TIPO_PAGO", P_TIPO_PAGO));
+                        comando.Parameters.Add(new OracleParameter("P_NO_AUTORIZACION", P_NO_AUTORIZACION));
+                        comando.Parameters.Add(new OracleParameter("P_VALOR", P_FLVALOR));
                         OracleDataReader read = comando.ExecuteReader();
 
                         return "guardado";
@@ -112,8 +110,10 @@ namespace Proyectoanalisis_
 
         }
 
-        [WebMethod]
-        public String Documentoactualizar(int p_documento, String pDoc_venta, String pDoc_tipo_documento, String pDoc_valor, String pDoc_no_documento, String pDoc_no_emision, String pDoc_documento_asociado)
+
+        [WebMethod]//clientes
+
+        public String Abonoactualizar(int P_ABONO_ID, int P_NOVENTA_ID, String P_TIPO_PAGO, String P_NO_AUTORIZACION, float P_FLVALOR)
         {
             using (OracleConnection conexion = new OracleConnection())
             {
@@ -123,17 +123,15 @@ namespace Proyectoanalisis_
                     conexion.Open();
                     using (OracleCommand comando = new OracleCommand())
                     {
-                        comando.CommandText = "pas_actualizar_documento";
+                        comando.CommandText = "PAS_ACTUALIZAR_ABONO";
                         comando.CommandType = CommandType.StoredProcedure;
                         comando.Connection = conexion;
-                        comando.Parameters.Add(new OracleParameter("p_venta", p_documento));
-                        comando.Parameters.Add(new OracleParameter("p_venta", pDoc_venta));
-                        comando.Parameters.Add(new OracleParameter("p_tipo_documento", pDoc_tipo_documento));
-                        comando.Parameters.Add(new OracleParameter("v_total", pDoc_valor));
-                        comando.Parameters.Add(new OracleParameter("p_no_documento", pDoc_no_documento));
-                        comando.Parameters.Add(new OracleParameter("p_no_emision", pDoc_no_emision));
-                        comando.Parameters.Add(new OracleParameter("p_documento_asociado", pDoc_documento_asociado));
-                        OracleDataReader read = comando.ExecuteReader();
+                        comando.Parameters.Add(new OracleParameter("P_ABONO_ID", P_ABONO_ID));
+                        comando.Parameters.Add(new OracleParameter("P_VENTA_ID", P_NOVENTA_ID));
+                        comando.Parameters.Add(new OracleParameter("P_TIPO_PAGO", P_TIPO_PAGO));
+                        comando.Parameters.Add(new OracleParameter("P_NO_AUTORIZACION", P_NO_AUTORIZACION));
+                        comando.Parameters.Add(new OracleParameter("P_VALOR", P_FLVALOR));
+                          OracleDataReader read = comando.ExecuteReader();
 
                         return "datos de usuario actualizados";
                     }
@@ -146,9 +144,9 @@ namespace Proyectoanalisis_
             }
 
         }
-      
-        [WebMethod]
-        public String DocumentoEliminar(int p_documento)
+        [WebMethod]//clientes
+
+        public String ClientesEliminar(int ID_ABONO)
         {
 
             using (OracleConnection conexion = new OracleConnection())
@@ -159,21 +157,30 @@ namespace Proyectoanalisis_
                     conexion.Open();
                     using (OracleCommand comando = new OracleCommand())
                     {
-                        comando.CommandText = "pas_eliminar_documento";
+                        comando.CommandText = "PAS_ELIMINAR_ABONO";
                         comando.CommandType = CommandType.StoredProcedure;
                         comando.Connection = conexion;
-                        comando.Parameters.Add(new OracleParameter("p_documento", p_documento));
+                        comando.Parameters.Add(new OracleParameter("P_ABONO_ID", ID_ABONO));
 
                         OracleDataReader read = comando.ExecuteReader();
-                        return "datos de usuario eliminados";
+                        return "datos eliminados";
                     }
                 }
                 catch (Exception error)
                 {
-                    return "error al eliminar cliente";
+                    return "error al eliminar";
                     throw error;
                 }
             }
+
         }
+
+
+
+
+
+
+
+
     }
 }

@@ -1,14 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Usuario\\Desktop\\Proyectoanalisis_\\",
+  "WorkspaceRootPath": "C:\\Users\\Azzu0\\Dropbox\\azzu\u0027\\Semestre 7\\4.An\u00E1lisis de Sistemas\\Proyecto\\Proyecto-AnalisisV\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7C1077B3-3DDD-4872-B473-76F92932E702}|Proyectoanalisis_.csproj|C:\\Users\\Usuario\\Desktop\\Proyectoanalisis_\\proyecto-analisis.asmx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C1077B3-3DDD-4872-B473-76F92932E702}|Proyectoanalisis_.csproj|solutionrelative:proyecto-analisis.asmx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7C1077B3-3DDD-4872-B473-76F92932E702}|Proyectoanalisis_.csproj|c:\\users\\azzu0\\dropbox\\azzu\u0027\\semestre 7\\4.an\u00E1lisis de sistemas\\proyecto\\proyecto-analisisv\\cxc_abono.asmx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C1077B3-3DDD-4872-B473-76F92932E702}|Proyectoanalisis_.csproj|solutionrelative:cxc_abono.asmx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7C1077B3-3DDD-4872-B473-76F92932E702}|Proyectoanalisis_.csproj|c:\\users\\usuario\\desktop\\proyectoanalisis_\\cxc_documento.asmx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7C1077B3-3DDD-4872-B473-76F92932E702}|Proyectoanalisis_.csproj|C:\\Users\\Azzu0\\Dropbox\\azzu\u0027\\Semestre 7\\4.An\u00E1lisis de Sistemas\\Proyecto\\Proyecto-AnalisisV\\cxc_documento.asmx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7C1077B3-3DDD-4872-B473-76F92932E702}|Proyectoanalisis_.csproj|solutionrelative:cxc_documento.asmx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C1077B3-3DDD-4872-B473-76F92932E702}|Proyectoanalisis_.csproj|C:\\Users\\Azzu0\\Dropbox\\azzu\u0027\\Semestre 7\\4.An\u00E1lisis de Sistemas\\Proyecto\\Proyecto-AnalisisV\\proyecto-analisis.asmx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C1077B3-3DDD-4872-B473-76F92932E702}|Proyectoanalisis_.csproj|solutionrelative:proyecto-analisis.asmx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,30 +22,43 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CXC_Abono.asmx.cs",
+              "DocumentMoniker": "C:\\Users\\Azzu0\\Dropbox\\azzu\u0027\\Semestre 7\\4.An\u00E1lisis de Sistemas\\Proyecto\\Proyecto-AnalisisV\\CXC_Abono.asmx.cs",
+              "RelativeDocumentMoniker": "CXC_Abono.asmx.cs",
+              "ToolTip": "C:\\Users\\Azzu0\\Dropbox\\azzu\u0027\\Semestre 7\\4.An\u00E1lisis de Sistemas\\Proyecto\\Proyecto-AnalisisV\\CXC_Abono.asmx.cs",
+              "RelativeToolTip": "CXC_Abono.asmx.cs",
+              "ViewState": "AQIAACEAAAAAAAAAAAAQwJQAAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-14T02:00:35.654Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "CXC_Documento.asmx.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\Proyectoanalisis_\\CXC_Documento.asmx.cs",
+              "DocumentMoniker": "C:\\Users\\Azzu0\\Dropbox\\azzu\u0027\\Semestre 7\\4.An\u00E1lisis de Sistemas\\Proyecto\\Proyecto-AnalisisV\\CXC_Documento.asmx.cs",
               "RelativeDocumentMoniker": "CXC_Documento.asmx.cs",
-              "ToolTip": "C:\\Users\\Usuario\\Desktop\\Proyectoanalisis_\\CXC_Documento.asmx.cs",
+              "ToolTip": "C:\\Users\\Azzu0\\Dropbox\\azzu\u0027\\Semestre 7\\4.An\u00E1lisis de Sistemas\\Proyecto\\Proyecto-AnalisisV\\CXC_Documento.asmx.cs",
               "RelativeToolTip": "CXC_Documento.asmx.cs",
-              "ViewState": "AQIAABoAAAAAAAAAAAAAwE0AAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFoAAABCAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-12T23:13:55.283Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Proyecto-Analisis.asmx.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\Proyectoanalisis_\\Proyecto-Analisis.asmx.cs",
+              "DocumentMoniker": "C:\\Users\\Azzu0\\Dropbox\\azzu\u0027\\Semestre 7\\4.An\u00E1lisis de Sistemas\\Proyecto\\Proyecto-AnalisisV\\Proyecto-Analisis.asmx.cs",
               "RelativeDocumentMoniker": "Proyecto-Analisis.asmx.cs",
-              "ToolTip": "C:\\Users\\Usuario\\Desktop\\Proyectoanalisis_\\Proyecto-Analisis.asmx.cs",
+              "ToolTip": "C:\\Users\\Azzu0\\Dropbox\\azzu\u0027\\Semestre 7\\4.An\u00E1lisis de Sistemas\\Proyecto\\Proyecto-AnalisisV\\Proyecto-Analisis.asmx.cs",
               "RelativeToolTip": "Proyecto-Analisis.asmx.cs",
-              "ViewState": "AQIAAMoBAAAAAAAAAAAqwC0CAAA4AAAA",
+              "ViewState": "AQIAAJgAAAAAAAAAAAA9wLMAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-12T05:25:17.001Z",
               "EditorCaption": ""
