@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Services;
 using pruebas.Models;
 using System.Configuration;
+using System.Diagnostics;
 
 namespace Proyectoanalisis_
 {
@@ -35,7 +36,6 @@ namespace Proyectoanalisis_
             cadenaconexion = "Data Source=" + servidor + ";User Id=" + usuario + "; Password=" + password + "; ";
         }
         public string conexionString = ConfigurationManager.ConnectionStrings["BaseDatos"].ConnectionString;
-
 
         [WebMethod]
         public DataSet DocumentosMostrar()
@@ -179,10 +179,9 @@ namespace Proyectoanalisis_
             }
         }
 
-        [WebMethod]
+       [WebMethod]
         public String Documento_asignar_emision_documento(int p_documento)
         {
-
             using (OracleConnection conexion = new OracleConnection())
             {
                 try
@@ -194,19 +193,39 @@ namespace Proyectoanalisis_
                         comando.CommandText = "pas_asignar_emision_documento";
                         comando.CommandType = CommandType.StoredProcedure;
                         comando.Connection = conexion;
-                        comando.Parameters.Add(new OracleParameter("p_documento", p_documento));
 
+                        comando.Parameters.Add(new OracleParameter("p_documento", p_documento));
+                       
+                        string serie = NumeroSerie().ToString();
+                        comando.Parameters.Add(new OracleParameter("serie", OracleDbType.Varchar2)).Value = serie;
+                        String numerodocumento = NumeroSerie().ToString();
+
+                        String uuid = Guid.NewGuid().ToString();
+                        comando.Parameters.Add(new OracleParameter("uuid", OracleDbType.Varchar2)).Value = uuid;
+                       
+                        Documentoactualizar(p_documento, null, null, null, serie,numerodocumento , uuid, null);
+                           
                         OracleDataReader read = comando.ExecuteReader();
                         return "emision asignada correctamento";
                     }
                 }
                 catch (Exception error)
                 {
-                    return "error, no se pudo asignar correctamente...";
+                    return "error, no se pudo asignar correctamente, verificar que el documento exista...";
                     throw error;
                 }
             }
         }
+
+
+        private string NumeroSerie()
+        {
+            Random aleatorio = new Random();
+            int numeroAleatorio = aleatorio.Next(1000,10000); 
+            return numeroAleatorio.ToString();
+        }
+        
+
 
         [WebMethod]
         public String Documento_asignar_anulacion_documento(int p_documento)
@@ -237,28 +256,7 @@ namespace Proyectoanalisis_
             }
         }
 
-
-        [WebMethod]
-        public DataSet Documento_buscar_documentos_asociados_documento(int p_documento)
-        {
-            try
-            {
-                OracleConnection conexion = new OracleConnection(cadenaconexion);//abrir la conexion 
-                conexion.Open();     // se inicia la conexion 
-                OracleDataAdapter adapter = new OracleDataAdapter("select * from fas_buscar_documentos_asociados_documento(" + p_documento + ")", conexion);
-                DataSet ds = new DataSet();
-                adapter.Fill(ds, "fas_buscar_documentos_asociados_documento()");
-                return ds;
-            }
-            catch (Exception ex)
-            {
-                // Manejar excepciones aquí
-                throw new Exception("Error al intentar obtener datos: " + ex.Message);
-            }
-
-        }
-
-
+       
 
     }
 }

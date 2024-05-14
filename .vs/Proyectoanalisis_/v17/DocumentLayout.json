@@ -9,22 +9,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{7C1077B3-3DDD-4872-B473-76F92932E702}|Proyectoanalisis_.csproj|C:\\Users\\VICTUS\\Documents\\Proyecto_analisis\\Proyectoanalisis_\\proyecto-analisis.asmx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7C1077B3-3DDD-4872-B473-76F92932E702}|Proyectoanalisis_.csproj|solutionrelative:proyecto-analisis.asmx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7C1077B3-3DDD-4872-B473-76F92932E702}|Proyectoanalisis_.csproj|C:\\Users\\VICTUS\\Documents\\Proyecto_analisis\\Proyectoanalisis_\\CXC_ClientesRef.asmx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C1077B3-3DDD-4872-B473-76F92932E702}|Proyectoanalisis_.csproj|solutionrelative:CXC_ClientesRef.asmx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7C1077B3-3DDD-4872-B473-76F92932E702}|Proyectoanalisis_.csproj|C:\\Users\\VICTUS\\Documents\\Proyecto_analisis\\Proyectoanalisis_\\CXC_DetalleVenta.asmx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C1077B3-3DDD-4872-B473-76F92932E702}|Proyectoanalisis_.csproj|solutionrelative:CXC_DetalleVenta.asmx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7C1077B3-3DDD-4872-B473-76F92932E702}|Proyectoanalisis_.csproj|C:\\Users\\VICTUS\\Documents\\Proyecto_analisis\\Proyectoanalisis_\\cxc_abono.asmx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C1077B3-3DDD-4872-B473-76F92932E702}|Proyectoanalisis_.csproj|solutionrelative:cxc_abono.asmx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7C1077B3-3DDD-4872-B473-76F92932E702}|Proyectoanalisis_.csproj|C:\\Users\\VICTUS\\Documents\\Proyecto_analisis\\Proyectoanalisis_\\CXC_Venta.asmx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C1077B3-3DDD-4872-B473-76F92932E702}|Proyectoanalisis_.csproj|solutionrelative:CXC_Venta.asmx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -48,9 +32,10 @@
               "RelativeDocumentMoniker": "Proyecto-Analisis.asmx.cs",
               "ToolTip": "C:\\Users\\VICTUS\\Documents\\Proyecto_analisis\\Proyectoanalisis_\\Proyecto-Analisis.asmx.cs",
               "RelativeToolTip": "Proyecto-Analisis.asmx.cs",
-              "ViewState": "AQIAABUAAAAAAAAAAAAAABwAAAAVAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAsAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-27T19:45:31.11Z"
+              "WhenOpened": "2024-04-27T19:45:31.11Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -60,58 +45,10 @@
               "RelativeDocumentMoniker": "CXC_Documento.asmx.cs",
               "ToolTip": "C:\\Users\\VICTUS\\Documents\\Proyecto_analisis\\Proyectoanalisis_\\CXC_Documento.asmx.cs",
               "RelativeToolTip": "CXC_Documento.asmx.cs",
-              "ViewState": "AQIAAJgAAAAAAAAAAAAwwPwAAAAgAAAA",
+              "ViewState": "AQIAALYAAAAAAAAAAAAswMoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-20T21:21:47.133Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CXC_DetalleVenta.asmx.cs",
-              "DocumentMoniker": "C:\\Users\\VICTUS\\Documents\\Proyecto_analisis\\Proyectoanalisis_\\CXC_DetalleVenta.asmx.cs",
-              "RelativeDocumentMoniker": "CXC_DetalleVenta.asmx.cs",
-              "ToolTip": "C:\\Users\\VICTUS\\Documents\\Proyecto_analisis\\Proyectoanalisis_\\CXC_DetalleVenta.asmx.cs",
-              "RelativeToolTip": "CXC_DetalleVenta.asmx.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-20T21:21:37.011Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CXC_Venta.asmx.cs",
-              "DocumentMoniker": "C:\\Users\\VICTUS\\Documents\\Proyecto_analisis\\Proyectoanalisis_\\CXC_Venta.asmx.cs",
-              "RelativeDocumentMoniker": "CXC_Venta.asmx.cs",
-              "ToolTip": "C:\\Users\\VICTUS\\Documents\\Proyecto_analisis\\Proyectoanalisis_\\CXC_Venta.asmx.cs",
-              "RelativeToolTip": "CXC_Venta.asmx.cs",
-              "ViewState": "AQIAABUAAAAAAAAAAAA6wCEAAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-14T17:54:25.945Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CXC_ClientesRef.asmx.cs",
-              "DocumentMoniker": "C:\\Users\\VICTUS\\Documents\\Proyecto_analisis\\Proyectoanalisis_\\CXC_ClientesRef.asmx.cs",
-              "RelativeDocumentMoniker": "CXC_ClientesRef.asmx.cs",
-              "ToolTip": "C:\\Users\\VICTUS\\Documents\\Proyecto_analisis\\Proyectoanalisis_\\CXC_ClientesRef.asmx.cs",
-              "RelativeToolTip": "CXC_ClientesRef.asmx.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-14T17:48:07.729Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CXC_Abono.asmx.cs",
-              "DocumentMoniker": "C:\\Users\\VICTUS\\Documents\\Proyecto_analisis\\Proyectoanalisis_\\CXC_Abono.asmx.cs",
-              "RelativeDocumentMoniker": "CXC_Abono.asmx.cs",
-              "ToolTip": "C:\\Users\\VICTUS\\Documents\\Proyecto_analisis\\Proyectoanalisis_\\CXC_Abono.asmx.cs",
-              "RelativeToolTip": "CXC_Abono.asmx.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAASAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-14T02:00:35.654Z"
             }
           ]
         }
