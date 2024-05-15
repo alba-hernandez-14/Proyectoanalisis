@@ -44,9 +44,13 @@ namespace Proyectoanalisis_
             {
                 OracleConnection conexion = new OracleConnection(cadenaconexion);//abrir la conexion 
                 conexion.Open();     // se inicia la conexion 
-                OracleDataAdapter adapter = new OracleDataAdapter("select * from fas_listar_documentos()", conexion);
+                OracleDataAdapter adapter = new OracleDataAdapter("select * from fas_listar_documentos() ", conexion);
                 DataSet ds = new DataSet();
                 adapter.Fill(ds, "fas_listar_documentos()");
+
+                //OracleDataAdapter adapterc = new OracleDataAdapter("select * from fas_listar_clientes()", conexion);
+                //adapterc.Fill(ds,"fas_listar_clientes()");
+                
                 return ds;
             }
             catch (Exception ex)
@@ -193,17 +197,16 @@ namespace Proyectoanalisis_
                         comando.CommandText = "pas_asignar_emision_documento";
                         comando.CommandType = CommandType.StoredProcedure;
                         comando.Connection = conexion;
-
                         comando.Parameters.Add(new OracleParameter("p_documento", p_documento));
-                       
-                        string serie = NumeroSerie().ToString();
-                        comando.Parameters.Add(new OracleParameter("serie", OracleDbType.Varchar2)).Value = serie;
-                        String numerodocumento = NumeroSerie().ToString();
 
-                        String uuid = Guid.NewGuid().ToString();
-                        comando.Parameters.Add(new OracleParameter("uuid", OracleDbType.Varchar2)).Value = uuid;
-                       
-                        Documentoactualizar(p_documento, null, null, null, serie,numerodocumento , uuid, null);
+                        int numerodocumento = Numerodocumento();
+                        int serie = NumeroSerie();
+                        Guid uuid = Guid.NewGuid();
+
+                        comando.Parameters.Add(new OracleParameter("p_no_documento", numerodocumento.ToString()));
+                        comando.Parameters.Add(new OracleParameter("p_serie", serie.ToString()));
+                        comando.Parameters.Add(new OracleParameter("p_no_emision", uuid.ToString()));
+
                            
                         OracleDataReader read = comando.ExecuteReader();
                         return "emision asignada correctamento";
@@ -218,13 +221,18 @@ namespace Proyectoanalisis_
         }
 
 
-        private string NumeroSerie()
+        private int NumeroSerie()
         {
-            Random aleatorio = new Random();
-            int numeroAleatorio = aleatorio.Next(1000,10000); 
-            return numeroAleatorio.ToString();
+            Random nserie = new Random();
+            int numeroAleatorio = nserie.Next(1000,10000);
+            return numeroAleatorio;
         }
-        
+        private int Numerodocumento()
+        {
+            Random nserie = new Random();
+            int numeroAleatorio = nserie.Next(10000, 99999);
+            return numeroAleatorio;
+        }
 
 
         [WebMethod]
@@ -255,8 +263,6 @@ namespace Proyectoanalisis_
                 }
             }
         }
-
-       
 
     }
 }
