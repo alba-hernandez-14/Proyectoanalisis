@@ -50,7 +50,7 @@ namespace Proyectoanalisis_
 
                 //OracleDataAdapter adapterc = new OracleDataAdapter("select * from fas_listar_clientes()", conexion);
                 //adapterc.Fill(ds,"fas_listar_clientes()");
-                
+
                 return ds;
             }
             catch (Exception ex)
@@ -183,7 +183,7 @@ namespace Proyectoanalisis_
             }
         }
 
-       [WebMethod]
+        [WebMethod]
         public String Documento_asignar_emision_documento(int p_documento)
         {
             using (OracleConnection conexion = new OracleConnection())
@@ -207,7 +207,7 @@ namespace Proyectoanalisis_
                         comando.Parameters.Add(new OracleParameter("p_serie", serie.ToString()));
                         comando.Parameters.Add(new OracleParameter("p_no_emision", uuid.ToString()));
 
-                           
+
                         OracleDataReader read = comando.ExecuteReader();
                         return "emision asignada correctamento";
                     }
@@ -224,7 +224,7 @@ namespace Proyectoanalisis_
         private int NumeroSerie()
         {
             Random nserie = new Random();
-            int numeroAleatorio = nserie.Next(1000,10000);
+            int numeroAleatorio = nserie.Next(1000, 10000);
             return numeroAleatorio;
         }
         private int Numerodocumento()
@@ -263,6 +263,52 @@ namespace Proyectoanalisis_
                 }
             }
         }
+
+
+        [WebMethod]
+        public DataSet Encabezado_documento(int iddocumento)
+        {
+            try
+            {
+                OracleConnection conexion = new OracleConnection(cadenaconexion);//abrir la conexion 
+                conexion.Open();     // se inicia la conexion 
+                OracleDataAdapter adapter = new OracleDataAdapter("select * from fun_encabezado_documento(" + iddocumento + ")", conexion);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds, "fun_encabezado_documento()");
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                // Manejar excepciones aquí
+                throw new Exception("Error al intentar obtener datos: " + ex.Message);
+            }
+        }
+
+        [WebMethod]
+        public DataSet detalle_documento(int iddocumento)
+        {
+            try
+            {
+                OracleConnection conexion = new OracleConnection(cadenaconexion);//abrir la conexion 
+                conexion.Open();     // se inicia la conexion 
+                OracleDataAdapter adapter = new OracleDataAdapter("select * from fun_detalle_documento(" + iddocumento + ")", conexion);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds, "fun_detalle_documento()");
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                // Manejar excepciones aquí
+                throw new Exception("Error al intentar obtener datos: " + ex.Message);
+            }
+        }
+
+
+
+
+
+
+
 
     }
 }

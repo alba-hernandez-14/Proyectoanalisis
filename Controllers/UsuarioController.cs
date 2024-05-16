@@ -20,9 +20,9 @@ namespace pruebas.Controllers
         }
 
      
-        public int guardar(Usuarioen entidad)
+        public String  guardar(Usuarioen entidad)
         {
-            int respuesta = 0;
+            
             using (OracleConnection conexion = new OracleConnection())
             {
                 try
@@ -42,12 +42,13 @@ namespace pruebas.Controllers
                         comando.Parameters.Add(new OracleParameter("p_nit", entidad.CLI_NIT));
                         OracleDataReader read = comando.ExecuteReader();
 
-                        return respuesta = 1;
+                        return "correcto";
                     }
                 }
                 catch (Exception error)
                 {
-                    return respuesta = 0;
+                    
+                        return "correcto";
                     throw error;
                 }
             }
@@ -55,12 +56,7 @@ namespace pruebas.Controllers
 
         }
 
-        public JsonResult guardarusuario(Usuarioen entidad)
-        {
-            int resultado = 0;
-            resultado = guardar(entidad);
-            return Json(resultado);
-        }
+        
 
 
     }
