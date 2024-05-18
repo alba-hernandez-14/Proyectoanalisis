@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\VICTUS\\Documents\\Proyecto_analisis\\Proyectoanalisis_\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7C1077B3-3DDD-4872-B473-76F92932E702}|Proyectoanalisis_.csproj|c:\\users\\victus\\documents\\proyecto_analisis\\proyectoanalisis_\\cxc_documento.asmx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C1077B3-3DDD-4872-B473-76F92932E702}|Proyectoanalisis_.csproj|solutionrelative:cxc_documento.asmx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7C1077B3-3DDD-4872-B473-76F92932E702}|Proyectoanalisis_.csproj|c:\\users\\victus\\documents\\proyecto_analisis\\proyectoanalisis_\\cxc_reportes.asmx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C1077B3-3DDD-4872-B473-76F92932E702}|Proyectoanalisis_.csproj|solutionrelative:cxc_reportes.asmx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7C1077B3-3DDD-4872-B473-76F92932E702}|Proyectoanalisis_.csproj|C:\\Users\\VICTUS\\Documents\\Proyecto_analisis\\Proyectoanalisis_\\proyecto-analisis.asmx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7C1077B3-3DDD-4872-B473-76F92932E702}|Proyectoanalisis_.csproj|solutionrelative:proyecto-analisis.asmx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C1077B3-3DDD-4872-B473-76F92932E702}|Proyectoanalisis_.csproj|C:\\Users\\VICTUS\\Documents\\Proyecto_analisis\\Proyectoanalisis_\\cxc_documento.asmx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C1077B3-3DDD-4872-B473-76F92932E702}|Proyectoanalisis_.csproj|solutionrelative:cxc_documento.asmx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,11 +22,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CXC_Reportes.asmx.cs",
+              "DocumentMoniker": "C:\\Users\\VICTUS\\Documents\\Proyecto_analisis\\Proyectoanalisis_\\CXC_Reportes.asmx.cs",
+              "RelativeDocumentMoniker": "CXC_Reportes.asmx.cs",
+              "ToolTip": "C:\\Users\\VICTUS\\Documents\\Proyecto_analisis\\Proyectoanalisis_\\CXC_Reportes.asmx.cs",
+              "RelativeToolTip": "CXC_Reportes.asmx.cs",
+              "ViewState": "AQIAADgAAAAAAAAAAAAgwAkAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-18T02:11:00.765Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -32,22 +49,21 @@
               "RelativeDocumentMoniker": "Proyecto-Analisis.asmx.cs",
               "ToolTip": "C:\\Users\\VICTUS\\Documents\\Proyecto_analisis\\Proyectoanalisis_\\Proyecto-Analisis.asmx.cs",
               "RelativeToolTip": "Proyecto-Analisis.asmx.cs",
-              "ViewState": "AQIAACIAAAAAAAAAAAAQwC0AAAATAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-27T19:45:31.11Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "CXC_Documento.asmx.cs",
               "DocumentMoniker": "C:\\Users\\VICTUS\\Documents\\Proyecto_analisis\\Proyectoanalisis_\\CXC_Documento.asmx.cs",
               "RelativeDocumentMoniker": "CXC_Documento.asmx.cs",
               "ToolTip": "C:\\Users\\VICTUS\\Documents\\Proyecto_analisis\\Proyectoanalisis_\\CXC_Documento.asmx.cs",
               "RelativeToolTip": "CXC_Documento.asmx.cs",
-              "ViewState": "AQIAAAoBAAAAAAAAAAAswHIBAABAAAAA",
+              "ViewState": "AQIAAB0BAAAAAAAAAAAAADEBAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-20T21:21:47.133Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-20T21:21:47.133Z"
             }
           ]
         }

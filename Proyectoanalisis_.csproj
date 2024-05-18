@@ -189,6 +189,10 @@
       <DependentUpon>CXC_Documento.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CXC_Reportes.asmx.cs">
+      <DependentUpon>CXC_Reportes.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CXC_Venta.asmx.cs">
       <DependentUpon>CXC_Venta.asmx</DependentUpon>
       <SubType>Component</SubType>
@@ -224,6 +228,7 @@
     <Content Include="CXC_ClientesRef.asmx" />
     <Content Include="CXC_DetalleVenta.asmx" />
     <Content Include="CXC_Documento.asmx" />
+    <Content Include="CXC_Reportes.asmx" />
     <Content Include="CXC_Venta.asmx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
