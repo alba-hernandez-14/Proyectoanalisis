@@ -304,7 +304,89 @@ namespace Proyectoanalisis_
         }
 
 
+        [WebMethod]
+        public DataSet Reporte_clientes_frecuentes_frecuencia()
+        {
+            try
+            {
+                OracleConnection conexion = new OracleConnection(cadenaconexion);//abrir la conexion 
+                conexion.Open();     // se inicia la conexion 
+                OracleDataAdapter adapter = new OracleDataAdapter("select * from fun_reporte_clientes_frecuentes_frecuencia_cxc() ", conexion);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds, "fun_reporte_clientes_frecuentes_frecuencia_cxc()");
 
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                // Manejar excepciones aquí
+                throw new Exception("Error al intentar obtener datos: " + ex.Message);
+            }
+
+        }
+
+        [WebMethod]
+        public DataSet Reporte_clientes_frecuentes_cantidad_producto()
+        {
+            try
+            {
+                OracleConnection conexion = new OracleConnection(cadenaconexion);//abrir la conexion 
+                conexion.Open();     // se inicia la conexion 
+                OracleDataAdapter adapter = new OracleDataAdapter("select * from fun_reporte_clientes_frecuentes_cantidad_prod_cxc() ", conexion);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds, "fun_reporte_clientes_frecuentes_cantidad_prod_cxc()");
+
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                // Manejar excepciones aquí
+                throw new Exception("Error al intentar obtener datos: " + ex.Message);
+            }
+
+        }
+
+        [WebMethod]
+        public DataSet Reporte_clientes_frecuentes_compra_total()
+        {
+            try
+            {
+                OracleConnection conexion = new OracleConnection(cadenaconexion);//abrir la conexion 
+                conexion.Open();     // se inicia la conexion 
+                OracleDataAdapter adapter = new OracleDataAdapter("select * from fun_reporte_clientes_frecuentes_compra_total_cxc() ", conexion);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds, "fun_reporte_clientes_frecuentes_compra_total_cxc()");
+
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                // Manejar excepciones aquí
+                throw new Exception("Error al intentar obtener datos: " + ex.Message);
+            }
+
+        }
+
+        [WebMethod]
+        public DataSet Reporte_clientes_sin_compra_3_meses_cxc()
+        {
+            try
+            {
+                OracleConnection conexion = new OracleConnection(cadenaconexion);//abrir la conexion 
+                conexion.Open();     // se inicia la conexion 
+                OracleDataAdapter adapter = new OracleDataAdapter("select * from fun_clientes_sin_compra_3_meses_cxc() ", conexion);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds, "fun_clientes_sin_compra_3_meses_cxc()");
+
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                // Manejar excepciones aquí
+                throw new Exception("Error al intentar obtener datos: " + ex.Message);
+            }
+
+        }
 
 
 
