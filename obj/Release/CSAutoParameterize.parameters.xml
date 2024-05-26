@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="BaseDatos-Web.config Connection String" description="BaseDatos Connection String used in web.config by the application to access the database." defaultValue="USER ID=cliente; PASSWORD=123; DATA SOURCE=localhost:1521/orcl;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Projects\\alba-hernandez-14\\Proyectoanalisis\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='BaseDatos']/@connectionString" />
+  </parameter>
+</parameters>

@@ -30,8 +30,8 @@ namespace Proyectoanalisis_
         {
 
             servidor = "localhost:1521 / orcl";
-            usuario = "PROYECTOANALISIS";
-            password = "1234";
+            usuario = "cliente";
+            password = "123";
             cadenaconexion = "Data Source=" + servidor + ";User Id=" + usuario + "; Password=" + password + "; ";
         }
 

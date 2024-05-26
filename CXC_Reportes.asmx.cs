@@ -30,8 +30,8 @@ namespace Proyectoanalisis_
         {
 
             servidor = "localhost:1521 / orcl";
-            usuario = "PROYECTOANALISIS";
-            password = "1234";
+            usuario = "cliente";
+            password = "123";
             cadenaconexion = "Data Source=" + servidor + ";User Id=" + usuario + "; Password=" + password + "; ";
         }
 
@@ -122,6 +122,88 @@ namespace Proyectoanalisis_
 
         }
 
+        [WebMethod]
+        public DataSet Reporte_cobranza()
+        {
+            try
+            {
+                OracleConnection conexion = new OracleConnection(cadenaconexion);//abrir la conexion 
+                conexion.Open();     // se inicia la conexion 
+                OracleDataAdapter adapter = new OracleDataAdapter("select * from fun_reporte_cobranza_cxc() ", conexion);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds, "fun_reporte_cobranza_cxc()");
 
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                // Manejar excepciones aquí
+                throw new Exception("Error al intentar obtener datos: " + ex.Message);
+            }
+
+        }
+
+        [WebMethod]
+        public DataSet Reporte_ventas_fechas(String fecha_inicial, String fecha_final)
+        {
+            try
+            {
+                OracleConnection conexion = new OracleConnection(cadenaconexion);//abrir la conexion 
+                conexion.Open();     // se inicia la conexion 
+                OracleDataAdapter adapter = new OracleDataAdapter("select * from fun_reporte_ventas_dia_cxc(to_date('" + fecha_inicial+ "','YYYY-MM-DD'),to_date('" + fecha_final + "','YYYY-MM-DD')) ", conexion);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds, "fun_reporte_ventas_dia_cxc()");
+
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                // Manejar excepciones aquí
+                throw new Exception("Error al intentar obtener datos: " + ex.Message);
+            }
+
+        }
+
+        [WebMethod]
+        public DataSet Reporte_estado_cuentas_cliente(int cliente, String fecha_inicial, String fecha_final)
+        {
+            try
+            {
+                OracleConnection conexion = new OracleConnection(cadenaconexion);//abrir la conexion 
+                conexion.Open();     // se inicia la conexion 
+                OracleDataAdapter adapter = new OracleDataAdapter("select * from fun_reporte_estado_cuenta_cliente_cxc(" + cliente + ",to_date('" + fecha_inicial + "','YYYY-MM-DD'),to_date('" + fecha_final + "','YYYY-MM-DD')) ", conexion);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds, "fun_reporte_estado_cuenta_cliente_cxc()");
+
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                // Manejar excepciones aquí
+                throw new Exception("Error al intentar obtener datos: " + ex.Message);
+            }
+
+        }
+
+        [WebMethod]
+        public DataSet Reporte_pagos_fechas(String fecha_inicial, String fecha_final)
+        {
+            try
+            {
+                OracleConnection conexion = new OracleConnection(cadenaconexion);//abrir la conexion 
+                conexion.Open();     // se inicia la conexion 
+                OracleDataAdapter adapter = new OracleDataAdapter("select * from fun_reporte_pagos_por_fecha_cxc(to_date('" + fecha_inicial + "','YYYY-MM-DD'),to_date('" + fecha_final + "','YYYY-MM-DD')) ", conexion);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds, "fun_reporte_pagos_por_fecha_cxc()");
+
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                // Manejar excepciones aquí
+                throw new Exception("Error al intentar obtener datos: " + ex.Message);
+            }
+
+        }
     }
 }
