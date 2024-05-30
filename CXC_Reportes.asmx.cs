@@ -205,5 +205,27 @@ namespace Proyectoanalisis_
             }
 
         }
+
+        [WebMethod]
+        public DataSet Reporte_ventas_pendientes_fechas(String fecha_inicial, String fecha_final)
+        {
+            try
+            {
+                OracleConnection conexion = new OracleConnection(cadenaconexion);//abrir la conexion 
+                conexion.Open();     // se inicia la conexion 
+                OracleDataAdapter adapter = new OracleDataAdapter("select * from fun_reporte_cobranza_rango_cxc(to_date('" + fecha_inicial + "','YYYY-MM-DD'),to_date('" + fecha_final + "','YYYY-MM-DD')) ", conexion);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds, "fun_reporte_cobranza_rango_cxc()");
+
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                // Manejar excepciones aquí
+                throw new Exception("Error al intentar obtener datos: " + ex.Message);
+            }
+
+        }
+
     }
 }
